@@ -4,7 +4,6 @@
 #include <vector>
 
 #include "SceneObject.h"
-
 class Scene
 {
 private:
@@ -13,11 +12,10 @@ private:
 public:
 	Scene ();
 	~Scene ();
-
 	void Update ();
 	void Display ();
-
 	void Clear ();
+	void push_object(SceneObject* object);
 };
 
 #endif

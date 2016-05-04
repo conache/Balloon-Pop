@@ -10,7 +10,6 @@
 #include <cstdlib>
 
 #define BALL_SPEED 200
-#include <ctime>
 BallObject::BallObject () :
 	_speed (BALL_SPEED),
 	_position (0,0 )
@@ -18,12 +17,14 @@ BallObject::BallObject () :
 	_image = Resources::LoadImage ("Assets/Images/Ball.png");
 
 	// This need to be deleted too
-	 srand(time(NULL));
 	_position = Vector2 (161803398 * rand() % ( Screen::GetWidth() - 50 ),0);
+	_destination.SetX(_position.GetX());
+	_destination.SetY (Screen::GetHeight () + _image->GetHeight() );
 }
 
 BallObject::~BallObject ()
 {
+    std::cout<<"Destroyed";
 	delete _image;
 }
 
@@ -58,9 +59,6 @@ void BallObject::Update ()
 //	 velocity.Normalize ();
 //
 //	 _position += velocity * _speed * GameTime::GetDeltaTime ();
-
-	_destination.SetX(_position.GetX());
-	_destination.SetY (Screen::GetHeight () + _image->GetHeight() );
    // std::cout<<_destination.GetX()<<" "<<_destination.GetY()<<"\n";
 	Vector2 velocity = _destination - _position;
 	if (velocity.SqrMagnitude () < 0.1f) {

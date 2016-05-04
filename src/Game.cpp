@@ -9,15 +9,15 @@
 #include "GameTime.h"
 #include "Input.h"
 #include "Screen.h"
-
+#include "BallObject.h"
+#include  <tgmath.h>
 #define FRAMES_PER_SECOND 1000
 #define TIME_PER_FRAME (1000 / FRAMES_PER_SECOND)
 #define TICKS_PER_FRAME (1.0 / FRAMES_PER_SECOND)
 
 Game::Game ()
 {
-	_currentScene = new Scene ();
-
+    _currentScene = new Scene ();
 	GameTime::Init();
 }
 
@@ -36,7 +36,7 @@ Game* Game::Instance ()
 void Game::Start ()
 {
 	bool running=true;
-
+    float old_time = 0, frequency = 3;
 	while(running)
 	{
 		Screen::Clear ();
@@ -54,6 +54,17 @@ void Game::Start ()
 		// }
 
 		_currentScene->Update ();
+        old_time += GameTime::GetDeltaTime();
+		std::cout<< GameTime::GetTime()<<" "<<trunc(old_time)<<"\n";
+        if (frequency>=0.7 && old_time >= frequency) {
+                _currentScene -> push_object( new BallObject());
+                old_time = 0;
+                frequency -=0.1;
+            }
+        else if (old_time >= frequency){
+             _currentScene -> push_object( new BallObject());
+                old_time = 0;
+        }
 		_currentScene->Display ();
 
 		Screen::Render ();

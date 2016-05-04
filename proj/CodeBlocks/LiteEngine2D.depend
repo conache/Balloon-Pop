@@ -1100,7 +1100,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1462370933 source:c:\users\cristian\desktop\liteengine2d-master\src\ballobject.cpp
+1462375536 source:c:\users\cristian\desktop\liteengine2d-master\src\ballobject.cpp
 	"BallObject.h"
 	"Resources.h"
 	"Screen.h"
@@ -1108,7 +1108,6 @@
 	"GameTime.h"
 	"Vector2.h"
 	<cstdlib>
-	<ctime>
 
 1461025726 c:\users\cristian\desktop\liteengine2d-master\include\ballobject.h
 	"Image.h"
@@ -1472,18 +1471,20 @@
 	<SDL.h>
 	<stdint.h>
 
-1462363433 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
+1462378964 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
 	"GameTime.h"
 	"Input.h"
 	"Screen.h"
+	"BallObject.h"
+	<tgmath.h>
 
 1461025726 c:\users\cristian\desktop\liteengine2d-master\include\game.h
 	"Scene.h"
 
-1461025726 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
+1462375712 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
 	<vector>
 	"SceneObject.h"
 
@@ -1538,7 +1539,7 @@
 	"Game.h"
 	"GameEngine.h"
 
-1462370735 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
+1462375685 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
 	"Scene.h"
 	"BallObject.h"
 	<ctime>
