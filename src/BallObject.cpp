@@ -10,12 +10,10 @@
 #include <cstdlib>
 
 #define BALL_SPEED 200
-BallObject::BallObject () :
-	_speed (BALL_SPEED),
-	_position (0,0 )
+BallObject::BallObject (float speed)
 {
 	_image = Resources::LoadImage ("Assets/Images/Ball.png");
-
+    _speed = speed;
 	// This need to be deleted too
 	_position = Vector2 (161803398 * rand() % ( Screen::GetWidth() - 50 ),0);
 	_destination.SetX(_position.GetX());

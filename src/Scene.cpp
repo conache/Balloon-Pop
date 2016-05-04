@@ -6,7 +6,7 @@ Scene::Scene ()
 {
 	// Hardcoded construction of a new BallObject in the scene constructor
 	// TODO: This need to be deleted (even as an example)
-	_objects.push_back (new BallObject ());
+	//_objects.push_back (new BallObject ());
 	// _objects.push_back (new BallObject ());
 	// _objects.push_back (new BallObject ());
 	// _objects.push_back (new BallObject ());

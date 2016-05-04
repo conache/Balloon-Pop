@@ -15,7 +15,7 @@ private:
 	Vector2 _destination;
 
 public:
-	BallObject ();
+	BallObject (float speed);
 	~BallObject ();
 
 	virtual void Draw ();

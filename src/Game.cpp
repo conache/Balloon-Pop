@@ -36,9 +36,9 @@ Game* Game::Instance ()
 void Game::Start ()
 {
 	bool running=true;
-    float old_time = 0, frequency = 3;
-	while(running)
-	{
+    float old_time = 0, min_frequency = 0.5, current_frequency = 3, current_speed = 75, max_speed = 500;
+	while(running){
+
 		Screen::Clear ();
 
 		GameTime::UpdateFrame ();
@@ -54,17 +54,7 @@ void Game::Start ()
 		// }
 
 		_currentScene->Update ();
-        old_time += GameTime::GetDeltaTime();
-		std::cout<< GameTime::GetTime()<<" "<<trunc(old_time)<<"\n";
-        if (frequency>=0.7 && old_time >= frequency) {
-                _currentScene -> push_object( new BallObject());
-                old_time = 0;
-                frequency -=0.1;
-            }
-        else if (old_time >= frequency){
-             _currentScene -> push_object( new BallObject());
-                old_time = 0;
-        }
+		create_objects(old_time, current_frequency, current_speed, _currentScene, min_frequency, max_speed);
 		_currentScene->Display ();
 
 		Screen::Render ();
@@ -73,4 +63,18 @@ void Game::Start ()
 			SDL_Delay(TICKS_PER_FRAME - (GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()));
 		}
 	}
+}
+
+void Game::create_objects(float& old_time, float& current_frequency, float& current_speed, Scene* _currentScene,float min_frequency,float max_speed){
+    old_time += GameTime::GetDeltaTime();
+    if ( current_frequency >= min_frequency && old_time >= current_frequency) {
+        _currentScene -> push_object( new BallObject(current_speed));
+        old_time = 0;
+        current_frequency -= 0.1;
+        if( current_speed <= max_speed ) current_speed += 5;
+    } else if (old_time >= current_frequency){
+        _currentScene -> push_object( new BallObject( current_speed ));
+        old_time = 0;
+        current_speed +=2;
+    }
 }
