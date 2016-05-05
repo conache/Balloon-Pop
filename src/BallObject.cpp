@@ -22,8 +22,11 @@ BallObject::BallObject (float speed)
 
 BallObject::~BallObject ()
 {
-    std::cout<<"Destroyed";
 	delete _image;
+}
+
+Vector2 BallObject::get_position(){
+    return _position;
 }
 
 void BallObject::Draw ()
@@ -60,9 +63,11 @@ void BallObject::Update ()
    // std::cout<<_destination.GetX()<<" "<<_destination.GetY()<<"\n";
 	Vector2 velocity = _destination - _position;
 	if (velocity.SqrMagnitude () < 0.1f) {
-		return;
-	}
-
+        return;
+	} else{
 	velocity.Normalize ();
 	_position += velocity * _speed * GameTime::GetDeltaTime ();
+	}
 }
+
+

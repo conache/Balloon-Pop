@@ -1100,7 +1100,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1462379627 source:c:\users\cristian\desktop\liteengine2d-master\src\ballobject.cpp
+1462460327 source:c:\users\cristian\desktop\liteengine2d-master\src\ballobject.cpp
 	"BallObject.h"
 	"Resources.h"
 	"Screen.h"
@@ -1109,7 +1109,7 @@
 	"Vector2.h"
 	<cstdlib>
 
-1462379653 c:\users\cristian\desktop\liteengine2d-master\include\ballobject.h
+1462459708 c:\users\cristian\desktop\liteengine2d-master\include\ballobject.h
 	"Image.h"
 	"SceneObject.h"
 	"Vector2.h"
@@ -1442,8 +1442,9 @@
 1461025726 c:\users\cristian\desktop\liteengine2d-master\include\object.h
 	<string>
 
-1461025726 c:\users\cristian\desktop\liteengine2d-master\include\sceneobject.h
+1462459763 c:\users\cristian\desktop\liteengine2d-master\include\sceneobject.h
 	"Object.h"
+	"Vector2.h"
 
 1461025726 c:\users\cristian\desktop\liteengine2d-master\include\vector2.h
 	<iostream>
@@ -1471,7 +1472,7 @@
 	<SDL.h>
 	<stdint.h>
 
-1462380044 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
+1462457986 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
@@ -1484,7 +1485,7 @@
 1462381732 c:\users\cristian\desktop\liteengine2d-master\include\game.h
 	"Scene.h"
 
-1462375712 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
+1462456054 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
 	<vector>
 	"SceneObject.h"
 
@@ -1524,7 +1525,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1462362497 source:c:\users\cristian\desktop\liteengine2d-master\src\input.cpp
+1462460821 source:c:\users\cristian\desktop\liteengine2d-master\src\input.cpp
 	"Input.h"
 
 1461025726 source:c:\users\cristian\desktop\liteengine2d-master\src\object.cpp
@@ -1539,12 +1540,13 @@
 	"Game.h"
 	"GameEngine.h"
 
-1462379670 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
+1462460160 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
 	"Scene.h"
 	"BallObject.h"
-	<ctime>
+	"Screen.h"
+	<algorithm>
 
-1461025726 source:c:\users\cristian\desktop\liteengine2d-master\src\sceneobject.cpp
+1462459685 source:c:\users\cristian\desktop\liteengine2d-master\src\sceneobject.cpp
 	"SceneObject.h"
 
 1462369629 source:c:\users\cristian\desktop\liteengine2d-master\src\screen.cpp

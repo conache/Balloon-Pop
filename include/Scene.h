@@ -16,6 +16,7 @@ public:
 	void Display ();
 	void Clear ();
 	void push_object(SceneObject* object);
+	void delete_object(SceneObject* object);
 };
 
 #endif

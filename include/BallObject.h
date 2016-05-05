@@ -2,7 +2,6 @@
 #define BALLOBJECT_H
 
 #include "Image.h"
-
 #include "SceneObject.h"
 #include "Vector2.h"
 
@@ -17,7 +16,7 @@ private:
 public:
 	BallObject (float speed);
 	~BallObject ();
-
+    virtual Vector2 get_position();
 	virtual void Draw ();
 	virtual void Update ();
 };

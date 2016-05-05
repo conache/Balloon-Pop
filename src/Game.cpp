@@ -52,11 +52,9 @@ void Game::Start ()
 		// if (Input::GetResizeEvent () != Vector2::Zero) {
 		// 	OnWindowResize (Input::GetResizeEvent ());
 		// }
-
 		_currentScene->Update ();
-		create_objects(old_time, current_frequency, current_speed, _currentScene, min_frequency, max_speed);
+		//create_objects(old_time, current_frequency, current_speed, _currentScene, min_frequency, max_speed);
 		_currentScene->Display ();
-
 		Screen::Render ();
 
 		if(TICKS_PER_FRAME > GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()) {

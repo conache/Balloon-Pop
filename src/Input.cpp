@@ -44,10 +44,13 @@ void Input::UpdateState ()
 				}
 				_keyState[(int)event.key.keysym.sym] = false;
                 break;
-            case SDL_MOUSEBUTTONDOWN:
+            case SDL_MOUSEBUTTONDOWN:{
+                Vector2 mouse_coord = GetMousePosition();
+                std::cout<<mouse_coord.GetX()<<"---"<<mouse_coord.GetY()<<"\n";
 				_mouseState [(int)event.button.button] = true;
-				break;
+				break;}
 			case SDL_MOUSEBUTTONUP:
+
 				_mouseState [(int)event.button.button] = false;
 				break;
         }
