@@ -18,6 +18,9 @@ void SceneObject::Draw ()
 {
 
 }
+int SceneObject::get_width(){
+}
+int SceneObject::get_height(){
+}
 Vector2 SceneObject::get_position(){
-
 }

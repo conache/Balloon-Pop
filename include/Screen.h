@@ -16,7 +16,7 @@ class Screen
 {
 private:
 	static SDL_Surface* _surface;
-
+    float pause_time_lapsed;
 public:
 	static void Init ();
 	static void Quit ();

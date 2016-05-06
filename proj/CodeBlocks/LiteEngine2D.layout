@@ -2,89 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="..\..\include\Window.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\SceneObject.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="85" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\Resources.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\ImageLoader.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="206" topLine="3" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\Scene.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="303" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\Object.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\Resources.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="76" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\Vector2.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="92" topLine="34" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\Input.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="455" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\SceneObject.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="199" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\Game.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="465" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\GameTime.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="167" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\Game.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="323" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\GameEngine.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="117" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="159" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="..\..\include\GameTime.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="378" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\BallObject.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="369" topLine="1" />
 		</Cursor>
 	</File>
 	<File name="..\..\include\Image.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -92,9 +12,24 @@
 			<Cursor1 position="188" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\src\Scene.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\include\Object.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1067" topLine="29" />
+			<Cursor1 position="180" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\SceneObject.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="311" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\Window.h" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Game.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2296" topLine="53" />
 		</Cursor>
 	</File>
 	<File name="..\..\src\GameEngine.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
@@ -102,34 +37,19 @@
 			<Cursor1 position="242" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\include\ImageLoader.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="199" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\src\BallObject.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1488" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\Input.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="282" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\..\include\Screen.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="422" topLine="6" />
-		</Cursor>
-	</File>
 	<File name="..\..\src\Screen.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="210" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\include\Object.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\include\Input.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="180" topLine="0" />
+			<Cursor1 position="749" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Vector2.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="92" topLine="34" />
 		</Cursor>
 	</File>
 	<File name="..\..\src\Window.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
@@ -137,9 +57,44 @@
 			<Cursor1 position="425" topLine="35" />
 		</Cursor>
 	</File>
-	<File name="..\..\src\Image.cpp" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\src\GameTime.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="296" topLine="0" />
+			<Cursor1 position="167" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="159" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\Scene.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="353" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\ImageLoader.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="199" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\BallObject.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="265" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Image.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="234" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\Screen.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="422" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\Game.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="323" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="..\..\include\Vector2.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
@@ -147,9 +102,54 @@
 			<Cursor1 position="1274" topLine="38" />
 		</Cursor>
 	</File>
+	<File name="..\..\src\Input.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="527" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Resources.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="76" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="..\..\include\ResourceLoader.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="189" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\ImageLoader.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="480" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\GameEngine.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="117" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Scene.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="387" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\BallObject.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="325" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\SceneObject.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="270" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\src\Object.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\include\Resources.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

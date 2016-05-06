@@ -1,4 +1,4 @@
-#include "BallObject.h"
+#include "Balloon.h"
 
 #include "Resources.h"
 
@@ -8,33 +8,41 @@
 #include "Vector2.h"
 
 #include <cstdlib>
+#include <string>
+#define MAX_BALLOON_SPEED 500
+float Balloon::_speed = 75;
 
-#define BALL_SPEED 200
-BallObject::BallObject (float speed)
+Balloon::Balloon (std::string image_path)
 {
-	_image = Resources::LoadImage ("Assets/Images/Ball.png");
-    _speed = speed;
+	_image = Resources::LoadImage ( image_path );
+    if ( _speed < MAX_BALLOON_SPEED ) _speed += 5;
+    else _speed += 2;
 	// This need to be deleted too
 	_position = Vector2 (161803398 * rand() % ( Screen::GetWidth() - 50 ),0);
 	_destination.SetX(_position.GetX());
 	_destination.SetY (Screen::GetHeight () + _image->GetHeight() );
 }
 
-BallObject::~BallObject ()
+Balloon::~Balloon ()
 {
 	delete _image;
 }
 
-Vector2 BallObject::get_position(){
+Vector2 Balloon::get_position(){
     return _position;
 }
-
-void BallObject::Draw ()
+int Balloon::get_width(){
+    return _image -> GetWidth();
+}
+int Balloon::get_height(){
+    return _image->GetHeight();
+}
+void Balloon::Draw ()
 {
 	Screen::Draw (_image, _position);
 }
 
-void BallObject::Update ()
+void Balloon::Update ()
 {
 //	 Uncomment this to switch the controls of the ball to keyboard
 
@@ -69,5 +77,6 @@ void BallObject::Update ()
 	_position += velocity * _speed * GameTime::GetDeltaTime ();
 	}
 }
-
-
+float Balloon::GetSpeed(){
+    return _speed;
+}

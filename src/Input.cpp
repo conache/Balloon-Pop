@@ -1,5 +1,5 @@
 #include "Input.h"
-
+#include "Screen.h"
 bool Input::_keyState[KEYS_COUNT];
 bool Input::_lastKeyState[KEYS_COUNT];
 bool Input::_lastMouseState[4];
@@ -45,8 +45,6 @@ void Input::UpdateState ()
 				_keyState[(int)event.key.keysym.sym] = false;
                 break;
             case SDL_MOUSEBUTTONDOWN:{
-                Vector2 mouse_coord = GetMousePosition();
-                std::cout<<mouse_coord.GetX()<<"---"<<mouse_coord.GetY()<<"\n";
 				_mouseState [(int)event.button.button] = true;
 				break;}
 			case SDL_MOUSEBUTTONUP:
@@ -95,7 +93,7 @@ Vector2 Input::GetMousePosition ()
 
 	Vector2 position;
 	position.SetX ((float) x);
-	position.SetY ((float) y);
+	position.SetY ((float) Screen::GetHeight() - y);
 
 	return position;
 }
