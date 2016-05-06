@@ -1,5 +1,7 @@
 #include "YellowBalloon.h"
 #include "Player.h"
+#include "Screen.h"
+#include <time.h>
 float YellowBalloon::_creation_time = 0;
 float YellowBalloon::_current_frequency = 3;
 float YellowBalloon::_min_frequency = 0.5;
@@ -36,7 +38,12 @@ float YellowBalloon::GetCurrentFrequency(){
 
 
 YellowBalloon::~YellowBalloon(){
-    Player::IncreaseScore(20);
-    std::cout<<"Scor:"<<Player::GetScore()<<"\n";
+
+    if ( _position.GetY() > Screen::GetHeight() ){
+        if ( !Player::BonusMode() ) Player::DecreaseLives();
+         else;
+    }
+    else if ( !Player::BonusMode() ) Player::IncreaseScore( 20 );
+    else Player::IncreaseScore( 50 );
 }
 

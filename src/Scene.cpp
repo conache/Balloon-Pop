@@ -5,14 +5,12 @@
 #include "YellowBalloon.h"
 #include "Screen.h"
 #include <algorithm>
-#include <float.h>
 Scene::Scene ()
 {
     time_lapsed = 0;
     pause_time = 0;
 	// Hardcoded construction of a new Balloon in the scene constructor
 	// TODO: This need to be deleted (even as an example)
-    //_objects.push_back (new Balloon (50));
 	// _objects.push_back (new Balloon ());
 	// _objects.push_back (new Balloon ());
 	// _objects.push_back (new Balloon ());

@@ -1,5 +1,6 @@
 #include "RedBalloon.h"
 #include "Player.h"
+#include "Screen.h"
 float RedBalloon::_creation_time = 0;
 float RedBalloon::_current_frequency = 8;
 float RedBalloon::_min_frequency = 4;
@@ -37,6 +38,5 @@ float RedBalloon::GetCurrentFrequency(){
 
 RedBalloon::~RedBalloon()
 {
-    Player::DecreaseLives();
-    std::cout<<"Player lives:"<<Player::GetLives()<<"\n";
+    if( _position.GetY() <= Screen::GetHeight() ) Player::DecreaseLives();
 }

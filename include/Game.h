@@ -18,7 +18,6 @@ private:
 	~Game ();
 	Game (const Game& other);
 	Game& operator= (const Game& other);
-	void create_objects(float& old_time, float& frequency, float& current_speed, Scene* _currentScene,float min_frequency,float max_speed);
 };
 
 #endif
