@@ -17,6 +17,7 @@
 					<Add directory="../../include" />
 					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
 					<Add directory="lib/SDL2-2.0.4/i686-w64-mingw32/include/SDL2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_Image" />
@@ -35,6 +36,7 @@
 					<Add directory="../../include" />
 					<Add directory="lib/SDL2_image-2.0.0/i686-w64-mingw32/include/SDL2" />
 					<Add directory="lib/SDL2-2.0.4/i686-w64-mingw32/include/SDL2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -51,8 +53,10 @@
 		<Unit filename="../../include/Background.h" />
 		<Unit filename="../../include/Balloon.h" />
 		<Unit filename="../../include/BalloonController.h" />
+		<Unit filename="../../include/BalloonFactory.h" />
 		<Unit filename="../../include/Game.h" />
 		<Unit filename="../../include/GameEngine.h" />
+		<Unit filename="../../include/GameManager.h" />
 		<Unit filename="../../include/GameTime.h" />
 		<Unit filename="../../include/GreenBalloon.h" />
 		<Unit filename="../../include/Image.h" />
@@ -74,8 +78,10 @@
 		<Unit filename="../../src/Background.cpp" />
 		<Unit filename="../../src/Balloon.cpp" />
 		<Unit filename="../../src/BalloonController.cpp" />
+		<Unit filename="../../src/BalloonFactory.cpp" />
 		<Unit filename="../../src/Game.cpp" />
 		<Unit filename="../../src/GameEngine.cpp" />
+		<Unit filename="../../src/GameManager.cpp" />
 		<Unit filename="../../src/GameTime.cpp" />
 		<Unit filename="../../src/GreenBalloon.cpp" />
 		<Unit filename="../../src/Image.cpp" />

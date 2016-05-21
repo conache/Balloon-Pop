@@ -1,13 +1,11 @@
 #include "BalloonController.h"
+#include "BalloonFactory.h"
 #include "Vector2.h"
-#include "GameTime.h"
 #include <algorithm>
-#include "GreenBalloon.h"
-#include "RedBalloon.h"
-#include "YellowBalloon.h"
 #include "Screen.h"
 #include "Input.h"
 BalloonController::BalloonController(){
+    factory = new BalloonFactory;
 }
 
 BalloonController::~BalloonController(){
@@ -45,39 +43,6 @@ void BalloonController::Draw(){
     }
 }
 
-template<class BalloonType>
-void BalloonController::CreateBalloon(){
-    BalloonType* object = new BalloonType();
-    pause_time = ( object->get_height() )/ Balloon::GetSpeed();
-    _balloons.push_back( object );
-    BalloonType::InitializeCreationTime();
-}
-
-template<class BalloonType>
-bool BalloonController::EvaluateCreation( float deltaTime){
-    BalloonType::IncreaseCreationTime( deltaTime );
-    float current_time = BalloonType::GetCreationTime();
-    float current_frequency = BalloonType::GetCurrentFrequency();
-    float min_frequency = BalloonType::GetMinFrequency();
-    if ( current_frequency >= min_frequency && current_time >= current_frequency){
-        CreateBalloon<BalloonType>();
-        BalloonType::DecreaseBalloonFrequency();
-        return true;
-    } else if ( current_time >= current_frequency ){
-       CreateBalloon<BalloonType>();
-        return true;
-    }
-    return false;
-}
-
-void BalloonController::createBalloon(){
-    float deltaTime = GameTime::GetDeltaTime();
-    time_lapsed += deltaTime;
-    if (time_lapsed > pause_time && EvaluateCreation<RedBalloon>( deltaTime )) time_lapsed = 0;
-    else if (time_lapsed > pause_time && EvaluateCreation<YellowBalloon>( deltaTime )) time_lapsed = 0;
-    else if ( time_lapsed > pause_time && EvaluateCreation<GreenBalloon>( deltaTime )) time_lapsed = 0;
-}
-
 void BalloonController::clickCheck(){
     for( int i=1; i<=4; i++)
      if ( Input::GetMouseButtonDown(i) ){
@@ -85,9 +50,13 @@ void BalloonController::clickCheck(){
         break;
     }
 }
+void BalloonController::factoryInterrogation(){
+    Balloon* value = factory -> newBalloon();
+    if ( value) _balloons.push_back( value );
+}
 
 void BalloonController::Update(){
-    createBalloon();
+    factoryInterrogation();
     clickCheck();
     checkPosition();
     for (auto it : _balloons){

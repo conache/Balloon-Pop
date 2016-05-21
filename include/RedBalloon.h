@@ -17,6 +17,7 @@ class RedBalloon: public Balloon
         static void DecreaseBalloonFrequency();
         static float GetCreationTime();
         static float GetCurrentFrequency();
+        RedBalloon* Clone();
         virtual ~RedBalloon();
 
     protected:

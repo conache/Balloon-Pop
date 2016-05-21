@@ -15,6 +15,7 @@ class YellowBalloon: public Balloon
         static void DecreaseBalloonFrequency();
         static float GetCreationTime();
         static float GetCurrentFrequency();
+        YellowBalloon* Clone();
         virtual ~YellowBalloon();
 };
 

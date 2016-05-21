@@ -1,15 +1,14 @@
 #include "Balloon.h"
 
 #include "Resources.h"
-
 #include "Screen.h"
 #include "Input.h"
 #include "GameTime.h"
 #include "Vector2.h"
-
 #include <cstdlib>
 #include <string>
 #define MAX_BALLOON_SPEED 500
+
 float Balloon::_speed = 75;
 
 Balloon::Balloon (std::string image_path)
@@ -44,31 +43,6 @@ void Balloon::Draw ()
 
 void Balloon::Update ()
 {
-//	 Uncomment this to switch the controls of the ball to keyboard
-
-//	 Vector2 velocity = Vector2::Zero;
-//
-//	 if (Input::GetKey ('w')) {
-//	 	velocity += Vector2::Up;
-//	 }
-//	 if (Input::GetKey ('d')) {
-//	 	velocity += Vector2::Right;
-//	 }
-//	 if (Input::GetKey ('s')) {
-//	 	velocity += Vector2::Down;
-//	 }
-//	 if (Input::GetKey ('a')) {
-//	 	velocity += Vector2::Left;
-//	 }
-//
-//	 if (velocity == Vector2::Zero) {
-//	 	return;
-//	 }
-//
-//	 velocity.Normalize ();
-//
-//	 _position += velocity * _speed * GameTime::GetDeltaTime ();
-   // std::cout<<_destination.GetX()<<" "<<_destination.GetY()<<"\n";
 	Vector2 velocity = _destination - _position;
 	if (velocity.SqrMagnitude () < 0.1f) {
         return;

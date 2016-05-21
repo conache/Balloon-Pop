@@ -36,7 +36,9 @@ float YellowBalloon::GetCurrentFrequency(){
     return _current_frequency;
 }
 
-
+YellowBalloon* YellowBalloon::Clone(){
+    return new YellowBalloon;
+}
 YellowBalloon::~YellowBalloon(){
 
     if ( _position.GetY() > Screen::GetHeight() ){

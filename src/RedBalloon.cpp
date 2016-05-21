@@ -35,8 +35,10 @@ float RedBalloon::GetCurrentFrequency(){
     return _current_frequency;
 }
 
-
-RedBalloon::~RedBalloon()
-{
+RedBalloon::~RedBalloon(){
     if( _position.GetY() <= Screen::GetHeight() ) Player::DecreaseLives();
+}
+
+RedBalloon* RedBalloon::Clone(){
+    return new RedBalloon;
 }

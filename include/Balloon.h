@@ -22,6 +22,7 @@ public:
     virtual Vector2 get_position();
 	virtual void Draw ();
 	virtual void Update ();
+	virtual Balloon* Clone()=0;
 };
 
 #endif

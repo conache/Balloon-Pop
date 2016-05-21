@@ -64,3 +64,7 @@ GreenBalloon::~GreenBalloon()
         }
     }
 }
+
+GreenBalloon* GreenBalloon::Clone(){
+    return new GreenBalloon;
+}

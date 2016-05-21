@@ -17,6 +17,7 @@ static float _current_frequency;
         static void DecreaseBalloonFrequency();
         static float GetCreationTime();
         static float GetCurrentFrequency();
+        GreenBalloon* Clone();
         virtual ~GreenBalloon();
 
     protected:

@@ -1,0 +1,53 @@
+#include "BalloonFactory.h"
+#include "Vector2.h"
+#include "GameTime.h"
+#include <algorithm>
+#include "GreenBalloon.h"
+#include "RedBalloon.h"
+#include "YellowBalloon.h"
+#include "Screen.h"
+#include "Input.h"
+BalloonFactory::BalloonFactory()
+{
+    pause_time = time_lapsed = 0;
+}
+
+BalloonFactory::~BalloonFactory()
+{
+    //dtor
+}
+
+template<class BalloonType>
+void BalloonFactory::createBalloon(){
+    std::cout<<"BalloonCreated"<<std::endl;
+}
+
+template<class BalloonType>
+bool BalloonFactory::EvaluateCreation( float deltaTime){
+    BalloonType::IncreaseCreationTime( deltaTime );
+    float current_time = BalloonType::GetCreationTime();
+    float current_frequency = BalloonType::GetCurrentFrequency();
+    float min_frequency = BalloonType::GetMinFrequency();
+    if ( current_frequency >= min_frequency && current_time >= current_frequency){
+        CreateBalloon<BalloonType>();
+        BalloonType::DecreaseBalloonFrequency();
+        return true;
+    } else if ( current_time >= current_frequency ){
+       CreateBalloon<BalloonType>();
+        return true;
+    }
+    return false;
+}
+
+void BalloonFactory::createBalloon(){
+    float deltaTime = GameTime::GetDeltaTime();
+    time_lapsed += deltaTime;
+    if (time_lapsed > pause_time && EvaluateCreation<RedBalloon>( deltaTime )) time_lapsed = 0;
+    else if (time_lapsed > pause_time && EvaluateCreation<YellowBalloon>( deltaTime )) time_lapsed = 0;
+    else if ( time_lapsed > pause_time && EvaluateCreation<GreenBalloon>( deltaTime )) time_lapsed = 0;
+}
+
+void BalloonFactory::Update(){
+    createBalloon();
+}
+

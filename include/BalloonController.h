@@ -3,6 +3,7 @@
 #include "SceneObject.h"
 #include <vector>
 #include "Balloon.h"
+#include "BalloonFactory.h"
 class BalloonController: public SceneObject
 {
     public:
@@ -13,16 +14,14 @@ class BalloonController: public SceneObject
     protected:
 
     private:
-        float pause_time;
-        float time_lapsed;
+        BalloonFactory* factory;
         std::vector<Balloon*> _balloons;
         void deleteObject( Balloon* object);
         void onClick( Vector2 clickPosition );
         void checkPosition();
-        void createBalloon();
         void clickCheck();
-        template<class BalloonType> bool EvaluateCreation ( float deltaTime);
-        template<class BalloonType> void CreateBalloon();
+        void factoryInterrogation();
 };
+
 
 #endif // BALLOONCONTROLLER_H
