@@ -6,7 +6,7 @@ float GreenBalloon::_current_frequency = 12;
 float GreenBalloon::_min_frequency = 7;
 GreenBalloon::GreenBalloon():Balloon("Assets/Images/green_balloon.png")
 {
-    //ctor
+
 }
 
 void GreenBalloon::IncreaseCreationTime(float new_value){

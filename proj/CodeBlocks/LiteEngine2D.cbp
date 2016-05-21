@@ -48,7 +48,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="../../include/Background.h" />
 		<Unit filename="../../include/Balloon.h" />
+		<Unit filename="../../include/BalloonController.h" />
 		<Unit filename="../../include/Game.h" />
 		<Unit filename="../../include/GameEngine.h" />
 		<Unit filename="../../include/GameTime.h" />
@@ -69,7 +71,9 @@
 		<Unit filename="../../include/YellowBalloon.h" />
 		<Unit filename="../../include/stdio.h" />
 		<Unit filename="../../include/wchar.h" />
+		<Unit filename="../../src/Background.cpp" />
 		<Unit filename="../../src/Balloon.cpp" />
+		<Unit filename="../../src/BalloonController.cpp" />
 		<Unit filename="../../src/Game.cpp" />
 		<Unit filename="../../src/GameEngine.cpp" />
 		<Unit filename="../../src/GameTime.cpp" />

@@ -1472,7 +1472,7 @@
 	<SDL.h>
 	<stdint.h>
 
-1462547396 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
+1463562089 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
@@ -1483,10 +1483,10 @@
 	<tgmath.h>
 	<string>
 
-1462546791 c:\users\cristian\desktop\liteengine2d-master\include\game.h
+1463523354 c:\users\cristian\desktop\liteengine2d-master\include\game.h
 	"Scene.h"
 
-1462537091 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
+1463559641 c:\users\cristian\desktop\liteengine2d-master\include\scene.h
 	<vector>
 	"SceneObject.h"
 
@@ -1526,7 +1526,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1462468491 source:c:\users\cristian\desktop\liteengine2d-master\src\input.cpp
+1463520788 source:c:\users\cristian\desktop\liteengine2d-master\src\input.cpp
 	"Input.h"
 	"Screen.h"
 
@@ -1542,19 +1542,15 @@
 	"Game.h"
 	"GameEngine.h"
 
-1462542355 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
+1463559661 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
 	"Scene.h"
-	"Balloon.h"
-	"RedBalloon.h"
-	"GreenBalloon.h"
-	"YellowBalloon.h"
-	"Screen.h"
-	<algorithm>
+	"BalloonController.h"
+	"Background.h"
 
 1462465334 source:c:\users\cristian\desktop\liteengine2d-master\src\sceneobject.cpp
 	"SceneObject.h"
 
-1462369629 source:c:\users\cristian\desktop\liteengine2d-master\src\screen.cpp
+1463520788 source:c:\users\cristian\desktop\liteengine2d-master\src\screen.cpp
 	"Screen.h"
 	"Window.h"
 
@@ -1577,13 +1573,13 @@
 1462364978 source:c:\users\cristian\desktop\liteengine2d-master\src\window.cpp
 	"Window.h"
 
-1462540539 c:\users\cristian\desktop\liteengine2d-master\include\balloon.h
+1463520788 c:\users\cristian\desktop\liteengine2d-master\include\balloon.h
 	"Image.h"
 	"SceneObject.h"
 	"Vector2.h"
 	<string>
 
-1462536506 source:c:\users\cristian\desktop\liteengine2d-master\src\balloon.cpp
+1463520788 source:c:\users\cristian\desktop\liteengine2d-master\src\balloon.cpp
 	"Balloon.h"
 	"Resources.h"
 	"Screen.h"
@@ -1610,7 +1606,7 @@
 	"Player.h"
 	"Screen.h"
 
-1462549606 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
+1463523109 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
 	"GreenBalloon.h"
 	"Player.h"
 	"time.h"
@@ -1625,4 +1621,30 @@
 	"Player.h"
 	<string>
 	<iostream>
+
+1463559266 source:c:\users\cristian\desktop\liteengine2d-master\src\background.cpp
+	"Background.h"
+	"Resources.h"
+	"Screen.h"
+
+1463522247 c:\users\cristian\desktop\liteengine2d-master\include\background.h
+	"SceneObject.h"
+	"Vector2.h"
+	"Image.h"
+
+1463561864 source:c:\users\cristian\desktop\liteengine2d-master\src\ballooncontroller.cpp
+	"BalloonController.h"
+	"Vector2.h"
+	"GameTime.h"
+	<algorithm>
+	"GreenBalloon.h"
+	"RedBalloon.h"
+	"YellowBalloon.h"
+	"Screen.h"
+	"Input.h"
+
+1463561533 c:\users\cristian\desktop\liteengine2d-master\include\ballooncontroller.h
+	"SceneObject.h"
+	<vector>
+	"Balloon.h"
 

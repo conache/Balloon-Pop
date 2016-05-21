@@ -46,13 +46,6 @@ void Game::Start ()
         } else if ( !Player::GetLives() ) game_over = true; // when the player is dead
 
        // if ( !game_over ){
-
-        if ( Input::GetMouseButtonDown(1) ){
-            float mouse_X = Input::GetMousePosition().GetX();
-            float mouse_Y = Input::GetMousePosition().GetY();
-            SceneObject* matching_object = _currentScene -> identify_object( mouse_X, mouse_Y);
-            if ( matching_object ) _currentScene -> delete_object( matching_object );
-            }
 		// if (Input::GetResizeEvent () != Vector2::Zero) {
 		// 	OnWindowResize (Input::GetResizeEvent ());
 		// }
@@ -61,10 +54,9 @@ void Game::Start ()
                         Player::DecreaseBonusTime( GameTime::GetDeltaTime() );
                 else Player::DisableBonusMode();
         else;
-		_currentScene->Update ();
-		_currentScene -> SetBalloons( GameTime::GetDeltaTime() );
-		_currentScene->Display ();
-		Screen::Render ();
+		_currentScene->Update();
+		_currentScene->Display();
+		Screen::Render();
 
 		if(TICKS_PER_FRAME > GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()) {
 			SDL_Delay(TICKS_PER_FRAME - (GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()));
