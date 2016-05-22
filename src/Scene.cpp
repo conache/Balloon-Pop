@@ -1,12 +1,19 @@
 #include "Scene.h"
 #include "BalloonController.h"
+#include "BalloonFactory.h"
+#include "ObjectGeneratingValidator.h"
 #include "Background.h"
 Scene::Scene ()
 {
 	// Hardcoded construction of a new Balloon in the scene constructor
 	// TODO: This need to be deleted (even as an example)
+    ObjectGeneratingValidator* generatingValidator = new ObjectGeneratingValidator;
+    generatingValidator->Add( "RedBalloon", 4, 8);
+    generatingValidator->Add( "GreenBalloon", 7, 12);
+    generatingValidator->Add( "YellowBalloon", 0.7, 4);
+    BalloonFactory* factory = new BalloonFactory( generatingValidator );
 	_objects.push_back( new Background());
-	_objects.push_back (new BalloonController());
+	_objects.push_back ( new BalloonController( factory ) );
 }
 
 Scene::~Scene ()

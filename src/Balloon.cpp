@@ -1,22 +1,18 @@
 #include "Balloon.h"
-
 #include "Resources.h"
 #include "Screen.h"
 #include "Input.h"
 #include "GameTime.h"
 #include "Vector2.h"
 #include <cstdlib>
-#include <string>
 #define MAX_BALLOON_SPEED 500
 
-float Balloon::_speed = 75;
-
-Balloon::Balloon (std::string image_path)
+float Balloon::_speed = 60;
+Balloon::Balloon(std::string image_path)
 {
 	_image = Resources::LoadImage ( image_path );
-    if ( _speed < MAX_BALLOON_SPEED ) _speed += 5;
-    else _speed += 2;
-	// This need to be deleted too
+    if ( _speed < MAX_BALLOON_SPEED ) _speed += 3;
+    else _speed += 1;
 	_position = Vector2 (161803398 * rand() % ( Screen::GetWidth() - 50 ),0);
 	_destination.SetX(_position.GetX());
 	_destination.SetY (Screen::GetHeight () + _image->GetHeight() );

@@ -15,9 +15,16 @@
 #define TIME_PER_FRAME (1000 / FRAMES_PER_SECOND)
 #define TICKS_PER_FRAME (1.0 / FRAMES_PER_SECOND)
 #include <string>
+#include "CloneManager.h"
+#include "GreenBalloon.h"
+#include "RedBalloon.h"
+#include "YellowBalloon.h"
 Game::Game ()
 {
     _currentScene = new Scene ();
+    CloneManager::Instance()->Add<GreenBalloon>("GreenBalloon");
+    CloneManager::Instance()->Add<RedBalloon>("RedBalloon");
+    CloneManager::Instance()->Add<YellowBalloon>("YellowBalloon");
 }
 
 Game::~Game ()

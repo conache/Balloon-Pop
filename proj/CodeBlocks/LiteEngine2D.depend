@@ -1472,7 +1472,7 @@
 	<SDL.h>
 	<stdint.h>
 
-1463562089 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
+1463919147 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
@@ -1482,6 +1482,10 @@
 	"Player.h"
 	<tgmath.h>
 	<string>
+	"CloneManager.h"
+	"GreenBalloon.h"
+	"RedBalloon.h"
+	"YellowBalloon.h"
 
 1463523354 c:\users\cristian\desktop\liteengine2d-master\include\game.h
 	"Scene.h"
@@ -1542,9 +1546,11 @@
 	"Game.h"
 	"GameEngine.h"
 
-1463837077 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
+1463938828 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
 	"Scene.h"
 	"BalloonController.h"
+	"BalloonFactory.h"
+	"ObjectGeneratingValidator.h"
 	"Background.h"
 
 1462465334 source:c:\users\cristian\desktop\liteengine2d-master\src\sceneobject.cpp
@@ -1573,13 +1579,12 @@
 1462364978 source:c:\users\cristian\desktop\liteengine2d-master\src\window.cpp
 	"Window.h"
 
-1463830773 c:\users\cristian\desktop\liteengine2d-master\include\balloon.h
+1463927766 c:\users\cristian\desktop\liteengine2d-master\include\balloon.h
 	"Image.h"
 	"SceneObject.h"
 	"Vector2.h"
-	<string>
 
-1463830601 source:c:\users\cristian\desktop\liteengine2d-master\src\balloon.cpp
+1463929383 source:c:\users\cristian\desktop\liteengine2d-master\src\balloon.cpp
 	"Balloon.h"
 	"Resources.h"
 	"Screen.h"
@@ -1587,37 +1592,36 @@
 	"GameTime.h"
 	"Vector2.h"
 	<cstdlib>
-	<string>
 
-1463831141 source:c:\users\cristian\desktop\liteengine2d-master\src\yellowballoon.cpp
+1463928257 source:c:\users\cristian\desktop\liteengine2d-master\src\yellowballoon.cpp
 	"YellowBalloon.h"
 	"Player.h"
 	"Screen.h"
 	<time.h>
 
-1463831105 c:\users\cristian\desktop\liteengine2d-master\include\yellowballoon.h
+1463928273 c:\users\cristian\desktop\liteengine2d-master\include\yellowballoon.h
 	"Balloon.h"
 
-1463831091 c:\users\cristian\desktop\liteengine2d-master\include\redballoon.h
+1463928288 c:\users\cristian\desktop\liteengine2d-master\include\redballoon.h
 	"Balloon.h"
 
-1463831225 source:c:\users\cristian\desktop\liteengine2d-master\src\redballoon.cpp
+1463928385 source:c:\users\cristian\desktop\liteengine2d-master\src\redballoon.cpp
 	"RedBalloon.h"
 	"Player.h"
 	"Screen.h"
 
-1463830989 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
+1463928309 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
 	"GreenBalloon.h"
 	"Player.h"
 	"time.h"
 
-1463830927 c:\users\cristian\desktop\liteengine2d-master\include\greenballoon.h
+1463928299 c:\users\cristian\desktop\liteengine2d-master\include\greenballoon.h
 	"Balloon.h"
 
 1462548849 c:\users\cristian\desktop\liteengine2d-master\include\player.h
 	<string>
 
-1462549019 source:c:\users\cristian\desktop\liteengine2d-master\src\player.cpp
+1463920615 source:c:\users\cristian\desktop\liteengine2d-master\src\player.cpp
 	"Player.h"
 	<string>
 	<iostream>
@@ -1632,19 +1636,15 @@
 	"Vector2.h"
 	"Image.h"
 
-1463838597 source:c:\users\cristian\desktop\liteengine2d-master\src\ballooncontroller.cpp
+1463926070 source:c:\users\cristian\desktop\liteengine2d-master\src\ballooncontroller.cpp
 	"BalloonController.h"
+	"BalloonFactory.h"
 	"Vector2.h"
-	"GameTime.h"
 	<algorithm>
-	"GreenBalloon.h"
-	"RedBalloon.h"
-	"YellowBalloon.h"
 	"Screen.h"
 	"Input.h"
-	"BalloonFactory.h"
 
-1463840191 c:\users\cristian\desktop\liteengine2d-master\include\ballooncontroller.h
+1463898096 c:\users\cristian\desktop\liteengine2d-master\include\ballooncontroller.h
 	"SceneObject.h"
 	<vector>
 	"Balloon.h"
@@ -1655,15 +1655,36 @@
 
 1463828855 c:\users\cristian\desktop\liteengine2d-master\include\gamemanager.h
 
-1463839340 source:c:\users\cristian\desktop\liteengine2d-master\src\balloonfactory.cpp
+1463931628 source:c:\users\cristian\desktop\liteengine2d-master\src\balloonfactory.cpp
 	"BalloonFactory.h"
 	"GameTime.h"
 	"Balloon.h"
-	"GreenBalloon.h"
-	"RedBalloon.h"
-	"YellowBalloon.h"
+	"CloneManager.h"
 
-1463839861 c:\users\cristian\desktop\liteengine2d-master\include\balloonfactory.h
-	"SceneObject.h"
+1463926243 c:\users\cristian\desktop\liteengine2d-master\include\balloonfactory.h
+	"ObjectFactory.h"
 	"Balloon.h"
+	"ObjectGeneratingValidator.h"
+
+1463939922 source:c:\users\cristian\desktop\liteengine2d-master\src\objectgeneratingvalidator.cpp
+	"ObjectGeneratingValidator.h"
+	"iostream"
+
+1463939740 c:\users\cristian\desktop\liteengine2d-master\include\objectgeneratingvalidator.h
+	<map>
+	<cstring>
+
+1463919798 source:c:\users\cristian\desktop\liteengine2d-master\src\clonemanager.cpp
+	"CloneManager.h"
+	<map>
+
+1463922952 c:\users\cristian\desktop\liteengine2d-master\include\clonemanager.h
+	<map>
+	"SceneObject.h"
+
+1463926758 c:\users\cristian\desktop\liteengine2d-master\include\objectfactory.h
+	"SceneObject.h"
+
+1463926094 source:c:\users\cristian\desktop\liteengine2d-master\src\objectfactory.cpp
+	"ObjectFactory.h"
 

@@ -63,6 +63,7 @@
 		<Unit filename="../../include/ImageLoader.h" />
 		<Unit filename="../../include/Input.h" />
 		<Unit filename="../../include/Object.h" />
+		<Unit filename="../../include/ObjectGeneratingValidator.h" />
 		<Unit filename="../../include/Player.h" />
 		<Unit filename="../../include/RedBalloon.h" />
 		<Unit filename="../../include/ResourceLoader.h" />
@@ -88,6 +89,7 @@
 		<Unit filename="../../src/ImageLoader.cpp" />
 		<Unit filename="../../src/Input.cpp" />
 		<Unit filename="../../src/Object.cpp" />
+		<Unit filename="../../src/ObjectGeneratingValidator.cpp" />
 		<Unit filename="../../src/PLayer.cpp" />
 		<Unit filename="../../src/RedBalloon.cpp" />
 		<Unit filename="../../src/Resources.cpp" />

@@ -7,7 +7,7 @@
 class BalloonController: public SceneObject
 {
     public:
-        BalloonController();
+        BalloonController( BalloonFactory* balloonGenerator );
         virtual ~BalloonController();
         virtual void Draw();
         virtual void Update();

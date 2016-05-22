@@ -1,20 +1,19 @@
 #ifndef BALLOONFACTORY_H
 #define BALLOONFACTORY_H
-#include "SceneObject.h"
+#include "ObjectFactory.h"
 #include "Balloon.h"
-class BalloonFactory
+#include "ObjectGeneratingValidator.h"
+class BalloonFactory:public ObjectFactory
 {
     public:
-        BalloonFactory();
+        BalloonFactory( ObjectGeneratingValidator* generatingValidator);
         virtual ~BalloonFactory();
-        Balloon* newBalloon();
+        Balloon* newItem();
     protected:
 
     private:
-        float pause_time;
-        float time_lapsed;
-        template< class BalloonType> BalloonType* createBalloon();
-        template<class BalloonType> bool EvaluateCreation( float deltaTime);
+        float pause_time, time_lapsed;
+        ObjectGeneratingValidator* validator;
 };
 
 #endif // BALLOONFACTORY_H

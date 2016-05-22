@@ -4,8 +4,8 @@
 #include <algorithm>
 #include "Screen.h"
 #include "Input.h"
-BalloonController::BalloonController(){
-    factory = new BalloonFactory;
+BalloonController::BalloonController(BalloonFactory* balloonGenerator){
+    factory = balloonGenerator;
 }
 
 BalloonController::~BalloonController(){
@@ -51,7 +51,7 @@ void BalloonController::clickCheck(){
     }
 }
 void BalloonController::factoryInterrogation(){
-    Balloon* value = factory -> newBalloon();
+    Balloon* value = factory -> newItem();
     if ( value) _balloons.push_back( value );
 }
 
@@ -62,5 +62,6 @@ void BalloonController::Update(){
     for (auto it : _balloons){
         it->Update();
     }
+
 }
 
