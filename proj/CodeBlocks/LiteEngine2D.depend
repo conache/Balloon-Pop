@@ -1546,10 +1546,11 @@
 	"Game.h"
 	"GameEngine.h"
 
-1463938828 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
+1464001215 source:c:\users\cristian\desktop\liteengine2d-master\src\scene.cpp
 	"Scene.h"
 	"BalloonController.h"
 	"BalloonFactory.h"
+	"Player.h"
 	"ObjectGeneratingValidator.h"
 	"Background.h"
 
@@ -1618,7 +1619,7 @@
 1463928299 c:\users\cristian\desktop\liteengine2d-master\include\greenballoon.h
 	"Balloon.h"
 
-1462548849 c:\users\cristian\desktop\liteengine2d-master\include\player.h
+1464000181 c:\users\cristian\desktop\liteengine2d-master\include\player.h
 	<string>
 
 1463920615 source:c:\users\cristian\desktop\liteengine2d-master\src\player.cpp
@@ -1636,19 +1637,24 @@
 	"Vector2.h"
 	"Image.h"
 
-1463926070 source:c:\users\cristian\desktop\liteengine2d-master\src\ballooncontroller.cpp
+1464032992 source:c:\users\cristian\desktop\liteengine2d-master\src\ballooncontroller.cpp
 	"BalloonController.h"
 	"BalloonFactory.h"
 	"Vector2.h"
 	<algorithm>
 	"Screen.h"
 	"Input.h"
+	"Player.h"
+	"DeleteBalloonArgs.h"
+	"EventManager.h"
 
-1463898096 c:\users\cristian\desktop\liteengine2d-master\include\ballooncontroller.h
+1464037846 c:\users\cristian\desktop\liteengine2d-master\include\ballooncontroller.h
 	"SceneObject.h"
 	<vector>
 	"Balloon.h"
 	"BalloonFactory.h"
+	"Player.h"
+	"DeleteBalloonArgs.h"
 
 1463828855 source:c:\users\cristian\desktop\liteengine2d-master\src\gamemanager.cpp
 	"GameManager.h"
@@ -1678,7 +1684,7 @@
 	"CloneManager.h"
 	<map>
 
-1463922952 c:\users\cristian\desktop\liteengine2d-master\include\clonemanager.h
+1464003486 c:\users\cristian\desktop\liteengine2d-master\include\clonemanager.h
 	<map>
 	"SceneObject.h"
 
@@ -1687,4 +1693,54 @@
 
 1463926094 source:c:\users\cristian\desktop\liteengine2d-master\src\objectfactory.cpp
 	"ObjectFactory.h"
+
+1463991774 source:c:\users\cristian\desktop\liteengine2d-master\src\eventargs.cpp
+	"EventArgs.h"
+
+1464025367 c:\users\cristian\desktop\liteengine2d-master\include\eventargs.h
+
+1464033146 source:c:\users\cristian\desktop\liteengine2d-master\src\eventmanager.cpp
+	"EventManager.h"
+
+1464033928 c:\users\cristian\desktop\liteengine2d-master\include\eventmanager.h
+	<map>
+	"EventArgs.h"
+	"EventHandlerBase.h"
+	"EventHandler.h"
+
+1463996433 source:c:\users\cristian\desktop\liteengine2d-master\src\playerincreasescoreargs.cpp
+	"PlayerIncreaseScoreArgs.h"
+
+1463996238 c:\users\cristian\desktop\liteengine2d-master\include\playerincreasescoreargs.h
+	"EventArgs.h"
+	"Player.h"
+
+1464010947 c:\users\cristian\desktop\liteengine2d-master\include\deleteballoonargs.h
+	"Balloon.h"
+	"EventArgs.h"
+
+1464001895 source:c:\users\cristian\desktop\liteengine2d-master\src\deleteballoonargs.cpp
+	"DeleteBalloonArgs.h"
+
+1464033101 c:\users\cristian\desktop\liteengine2d-master\include\eventhandler.h
+	"EventArgs.h"
+	"EventHandlerBase.h"
+
+1464020187 source:c:\users\cristian\desktop\liteengine2d-master\src\eventhandler.cpp
+	"EventHandler.h"
+
+1464023494 c:\users\cristian\desktop\liteengine2d-master\include\event.h
+	"EventHandlerBase.h"
+	"EventHandler.h"
+	<string>
+	"EventArgs.h"
+
+1464033113 c:\users\cristian\desktop\liteengine2d-master\include\eventhandlerbase.h
+	"EventArgs.h"
+
+1464021579 source:c:\users\cristian\desktop\liteengine2d-master\src\event.cpp
+	"Event.h"
+
+1464019995 source:c:\users\cristian\desktop\liteengine2d-master\src\eventhandlerbase.cpp
+	"EventHandlerBase.h"
 

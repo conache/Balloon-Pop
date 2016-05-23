@@ -4,8 +4,14 @@
 #include <algorithm>
 #include "Screen.h"
 #include "Input.h"
-BalloonController::BalloonController(BalloonFactory* balloonGenerator){
+#include "Player.h"
+#include "DeleteBalloonArgs.h"
+#include "EventManager.h"
+
+BalloonController::BalloonController(BalloonFactory* balloonGenerator, Player* current_player){
     factory = balloonGenerator;
+    player = current_player;
+    EventManager::Instance()->AddEvent("DeleteBalloon", this, &BalloonController::BalloonDeletionCallBack);
 }
 
 BalloonController::~BalloonController(){
@@ -19,11 +25,23 @@ void BalloonController::deleteObject( Balloon* object){
     delete object;
 }
 
+void BalloonController::BalloonDeletionCallBack( EventArgs& args){
+    DeleteBalloonArgs* delete_args = dynamic_cast<DeleteBalloonArgs*>(&args);
+    deleteObject(delete_args->getBalloon());
+}
+
+void BalloonController::runDeleteEvent( Balloon* object){
+    DeleteBalloonArgs* args = new DeleteBalloonArgs(object);
+    EventManager::Instance()->RunEvent("DeleteBalloon",*args);
+    delete args;
+}
+
 void BalloonController::checkPosition(){
     for (auto it : _balloons){
         Vector2 object_position = it->get_position();
         float height = it->get_height();
-        if( object_position.GetY() > ( Screen::GetHeight() + height-0.1) ) deleteObject(it);
+        if( object_position.GetY() > ( Screen::GetHeight() + height-0.1) )
+        runDeleteEvent( it );
     }
 }
 
@@ -34,7 +52,8 @@ void BalloonController::onClick( Vector2 clickPosition ){
         Vector2 object_position = it->get_position();
         if( ( click_X >= object_position.GetX() && click_X <= object_position.GetX() + it->get_width() ) &&
            ( click_Y <= object_position.GetY() && click_Y >= object_position.GetY() - it->get_height()) )
-           deleteObject( it);
+        runDeleteEvent( it );
+
 	}
 }
 void BalloonController::Draw(){

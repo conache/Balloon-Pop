@@ -54,6 +54,9 @@
 		<Unit filename="../../include/Balloon.h" />
 		<Unit filename="../../include/BalloonController.h" />
 		<Unit filename="../../include/BalloonFactory.h" />
+		<Unit filename="../../include/CloneManager.h" />
+		<Unit filename="../../include/EventArgs.h" />
+		<Unit filename="../../include/EventManager.h" />
 		<Unit filename="../../include/Game.h" />
 		<Unit filename="../../include/GameEngine.h" />
 		<Unit filename="../../include/GameManager.h" />
@@ -63,8 +66,10 @@
 		<Unit filename="../../include/ImageLoader.h" />
 		<Unit filename="../../include/Input.h" />
 		<Unit filename="../../include/Object.h" />
+		<Unit filename="../../include/ObjectFactory.h" />
 		<Unit filename="../../include/ObjectGeneratingValidator.h" />
 		<Unit filename="../../include/Player.h" />
+		<Unit filename="../../include/PlayerIncreaseScoreArgs.h" />
 		<Unit filename="../../include/RedBalloon.h" />
 		<Unit filename="../../include/ResourceLoader.h" />
 		<Unit filename="../../include/Resources.h" />
@@ -80,6 +85,9 @@
 		<Unit filename="../../src/Balloon.cpp" />
 		<Unit filename="../../src/BalloonController.cpp" />
 		<Unit filename="../../src/BalloonFactory.cpp" />
+		<Unit filename="../../src/CloneManager.cpp" />
+		<Unit filename="../../src/EventArgs.cpp" />
+		<Unit filename="../../src/EventManager.cpp" />
 		<Unit filename="../../src/Game.cpp" />
 		<Unit filename="../../src/GameEngine.cpp" />
 		<Unit filename="../../src/GameManager.cpp" />
@@ -89,8 +97,10 @@
 		<Unit filename="../../src/ImageLoader.cpp" />
 		<Unit filename="../../src/Input.cpp" />
 		<Unit filename="../../src/Object.cpp" />
+		<Unit filename="../../src/ObjectFactory.cpp" />
 		<Unit filename="../../src/ObjectGeneratingValidator.cpp" />
 		<Unit filename="../../src/PLayer.cpp" />
+		<Unit filename="../../src/PlayerIncreaseScoreArgs.cpp" />
 		<Unit filename="../../src/RedBalloon.cpp" />
 		<Unit filename="../../src/Resources.cpp" />
 		<Unit filename="../../src/Scene.cpp" />

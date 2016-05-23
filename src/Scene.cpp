@@ -1,6 +1,7 @@
 #include "Scene.h"
 #include "BalloonController.h"
 #include "BalloonFactory.h"
+#include "Player.h"
 #include "ObjectGeneratingValidator.h"
 #include "Background.h"
 Scene::Scene ()
@@ -11,13 +12,13 @@ Scene::Scene ()
     generatingValidator->Add( "RedBalloon", 4, 8);
     generatingValidator->Add( "GreenBalloon", 7, 12);
     generatingValidator->Add( "YellowBalloon", 0.7, 4);
+    Player* player = new Player("TestPlayer");
     BalloonFactory* factory = new BalloonFactory( generatingValidator );
 	_objects.push_back( new Background());
-	_objects.push_back ( new BalloonController( factory ) );
+	_objects.push_back ( new BalloonController( factory, player) );
 }
 
-Scene::~Scene ()
-{
+Scene::~Scene (){
 	Clear ();
 }
 
