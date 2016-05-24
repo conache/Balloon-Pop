@@ -42,7 +42,6 @@ Game* Game::Instance (){
 void Game::Start ()
 {
 	bool running=true;
-	bool game_over = false;
 	while(running){
 		Screen::Clear ();
 		GameTime::UpdateFrame ();
@@ -50,21 +49,10 @@ void Game::Start ()
         if (Input::GetQuit () || Input::GetKeyDown (27)) {
         	running = false;
         	continue;
-        } else if ( !Player::GetLives() ) game_over = true; // when the player is dead
-
-       // if ( !game_over ){
-		// if (Input::GetResizeEvent () != Vector2::Zero) {
-		// 	OnWindowResize (Input::GetResizeEvent ());
-		// }
-		if( Player::BonusMode() )
-                if ( Player::BonusTime() > 0 )
-                        Player::DecreaseBonusTime( GameTime::GetDeltaTime() );
-                else Player::DisableBonusMode();
-        else;
+        }
 		_currentScene->Update();
 		_currentScene->Display();
 		Screen::Render();
-
 		if(TICKS_PER_FRAME > GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()) {
 			SDL_Delay(TICKS_PER_FRAME - (GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()));
 		}

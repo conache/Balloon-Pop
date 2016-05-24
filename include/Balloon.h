@@ -14,6 +14,10 @@ protected:
 public:
 	Balloon (std::string image_path);
 	~Balloon ();
+	virtual short  getLivesInfluence()=0;
+    virtual bool BonusGiver()=0;
+    virtual int getNormalPoints()=0;
+    virtual int getBonusPoints()=0;
 	virtual int get_width();
 	virtual int get_height();
     virtual Vector2 get_position();

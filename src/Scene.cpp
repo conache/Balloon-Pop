@@ -14,6 +14,7 @@ Scene::Scene ()
     generatingValidator->Add( "YellowBalloon", 0.7, 4);
     Player* player = new Player("TestPlayer");
     BalloonFactory* factory = new BalloonFactory( generatingValidator );
+	_objects.push_back( player );
 	_objects.push_back( new Background());
 	_objects.push_back ( new BalloonController( factory, player) );
 }

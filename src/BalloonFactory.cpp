@@ -10,7 +10,7 @@ BalloonFactory::BalloonFactory(ObjectGeneratingValidator* generatingValidator)
 
 BalloonFactory::~BalloonFactory()
 {
-    //dtor
+    delete validator;
 }
 
 Balloon* BalloonFactory::newItem(){
@@ -25,4 +25,5 @@ Balloon* BalloonFactory::newItem(){
         return object;
     }
     return NULL;
+
 }

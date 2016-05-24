@@ -9,9 +9,12 @@
 #include "EventManager.h"
 
 BalloonController::BalloonController(BalloonFactory* balloonGenerator, Player* current_player){
+
     factory = balloonGenerator;
     player = current_player;
+    EventManager::Instance()->AddEvent("DeleteBalloon", player, &Player::UpdateStatus);
     EventManager::Instance()->AddEvent("DeleteBalloon", this, &BalloonController::BalloonDeletionCallBack);
+
 }
 
 BalloonController::~BalloonController(){
@@ -31,7 +34,7 @@ void BalloonController::BalloonDeletionCallBack( EventArgs& args){
 }
 
 void BalloonController::runDeleteEvent( Balloon* object){
-    DeleteBalloonArgs* args = new DeleteBalloonArgs(object);
+    DeleteBalloonArgs* args = new DeleteBalloonArgs(object, player);
     EventManager::Instance()->RunEvent("DeleteBalloon",*args);
     delete args;
 }
@@ -40,7 +43,7 @@ void BalloonController::checkPosition(){
     for (auto it : _balloons){
         Vector2 object_position = it->get_position();
         float height = it->get_height();
-        if( object_position.GetY() > ( Screen::GetHeight() + height-0.1) )
+        if( object_position.GetY() > ( Screen::GetHeight() + height-0.5) )
         runDeleteEvent( it );
     }
 }

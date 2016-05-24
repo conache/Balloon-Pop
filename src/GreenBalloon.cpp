@@ -1,36 +1,29 @@
 #include "GreenBalloon.h"
-#include "Player.h"
-#include "time.h"
+#include "Screen.h"
+int GreenBalloon::lives_influence = 0;
+bool GreenBalloon::bonus_giver = true;
+int GreenBalloon::bonus_mode_points = 0;
+int GreenBalloon::normal_mode_points = 0;
 GreenBalloon::GreenBalloon():Balloon("Assets/Images/green_balloon.png")
 {
 
 }
+short GreenBalloon::getLivesInfluence(){
+    return lives_influence;
+}
 
-GreenBalloon::~GreenBalloon()
-{
-    srand( time(NULL) );
-    int score_bonus = Player::BonusScoreTimes();
-    int mode_bonus = Player::BonusModeTimes();
-    if ( abs( score_bonus - mode_bonus)>=2 ){
-        if( score_bonus > mode_bonus ){
-            Player::EnableBonusMode();
-            Player::IncreaseBonusModeTimes();
-        } else{
-        srand( time(NULL) );
-        Player::IncreaseScore( rand()%151 + 50 );
-        Player::IncreaseBonusScoreTimes();
-        }
-    } else{
-        switch ( rand()%2 ){
-        case 0:
-            Player::EnableBonusMode();
-            Player::IncreaseBonusModeTimes();
-            break;
-        case 1:{
-            srand( time(NULL) );
-            Player::IncreaseScore( rand()%151 + 50 );
-            Player::IncreaseBonusScoreTimes();
-        }
-        }
-    }
+bool GreenBalloon::BonusGiver(){
+    return bonus_giver;
+}
+GreenBalloon::~GreenBalloon(){
+}
+
+int GreenBalloon::getNormalPoints(){
+    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    return normal_mode_points;
+}
+
+int GreenBalloon::getBonusPoints(){
+    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    return bonus_mode_points;
 }

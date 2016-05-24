@@ -55,7 +55,10 @@
 		<Unit filename="../../include/BalloonController.h" />
 		<Unit filename="../../include/BalloonFactory.h" />
 		<Unit filename="../../include/CloneManager.h" />
+		<Unit filename="../../include/DeleteBalloonArgs.h" />
 		<Unit filename="../../include/EventArgs.h" />
+		<Unit filename="../../include/EventHandler.h" />
+		<Unit filename="../../include/EventHandlerBase.h" />
 		<Unit filename="../../include/EventManager.h" />
 		<Unit filename="../../include/Game.h" />
 		<Unit filename="../../include/GameEngine.h" />
@@ -86,7 +89,10 @@
 		<Unit filename="../../src/BalloonController.cpp" />
 		<Unit filename="../../src/BalloonFactory.cpp" />
 		<Unit filename="../../src/CloneManager.cpp" />
+		<Unit filename="../../src/DeleteBalloonArgs.cpp" />
 		<Unit filename="../../src/EventArgs.cpp" />
+		<Unit filename="../../src/EventHandler.cpp" />
+		<Unit filename="../../src/EventHandlerBase.cpp" />
 		<Unit filename="../../src/EventManager.cpp" />
 		<Unit filename="../../src/Game.cpp" />
 		<Unit filename="../../src/GameEngine.cpp" />

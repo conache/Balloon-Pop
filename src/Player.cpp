@@ -1,29 +1,45 @@
 #include "Player.h"
-#include <string>
+#include "EventManager.h"
+#include "DeleteBalloonArgs.h"
 #include <iostream> //remove it
-unsigned long long Player::score = 0;
-short int Player::lives = 3;
-bool Player::bonus_mode = false;
-float Player::bonus_time = 0;
-int Player::bonus_mode_count = 0;
-int Player::bonus_score_count = 0;
+#include "time.h"
+#include "GameTime.h"
 Player::Player(std::string PlayerName)
 {
     name = PlayerName;
+    score = 0;
+    lives = 3;
+    bonus_mode = false;
+    bonus_time = 0;
+    bonus_mode_count = 0;
+    bonus_score_count = 0;
+
+}
+
+void Player::DisableBonusMode(){
+    bonus_mode = false;
+    bonus_time = 0;
+    std::cout<<"Bonus mode disabled!\n";
+}
+
+void Player::Update(){
+
+ if( bonus_mode ){
+    if( bonus_time >=0 ) bonus_time -= GameTime::GetDeltaTime();
+    else DisableBonusMode();
+ }
 
 }
 void Player::IncreaseScore( int value ){
     score+=value;
-    std::cout<<"Player score:"<<score<<"\n";
 }
-void Player::IncreaseLives( int value ){
-    lives+=value;
+
+void Player::UpdateLives( int value ){
+    lives += value;
+    std::cout<<"Player lives:"<<lives<<std::endl;
 }
-void Player::DecreaseLives(){
-    lives -= 1;
-    std::cout<<"Player lives:"<<lives<<"\n";
-}
-unsigned long long Player::GetScore(){
+
+float Player::GetScore(){
     return score;
 }
 short int Player::GetLives(){
@@ -33,32 +49,59 @@ void Player::EnableBonusMode(){
     std::cout<<"Bonus mode enabled!\n";
     bonus_mode = true;
     bonus_time += 7;
+    bonus_mode_count+= 1;
 }
-void Player::DisableBonusMode(){
-    bonus_mode = false;
-    bonus_time = 0;
-    std::cout<<"Bonus mode disabled!\n";
-}
+
 bool Player::BonusMode(){
     return bonus_mode;
 }
-void Player::DecreaseBonusTime( float value ){
-    bonus_time -= value;
+
+std::string Player::getName(){
+    return name;
 }
-float Player::BonusTime(){
-    return bonus_time;
+
+void Player::setBonusScore(){
+    srand( time(NULL) );
+    score += rand() % 151 + 50;
+    bonus_score_count +=1;
 }
-void Player::IncreaseBonusScoreTimes(){
-    bonus_score_count += 1;
+
+void Player::EnterBonusMode(){
+
+    if( abs( bonus_score_count - bonus_mode_count) >=2 ){
+        if( bonus_score_count > bonus_mode_count ) EnableBonusMode();
+        else setBonusScore();
+    } else{
+        srand( time(NULL) );
+        switch( rand()%2){
+        case 0 :
+            EnableBonusMode();
+            break;
+        case 1:
+            setBonusScore();
+            break;
+        }
+    }
+
 }
-void Player::IncreaseBonusModeTimes(){
-    bonus_mode_count += 1;
-}
-int Player::BonusModeTimes(){
-    return bonus_mode_count;
-}
-int Player::BonusScoreTimes(){
-    return bonus_score_count;
+
+void Player::UpdateStatus(EventArgs& args){
+    DeleteBalloonArgs* delete_args = dynamic_cast<DeleteBalloonArgs*>(&args);
+    Player& player = *delete_args->getPlayer();
+    Balloon* balloon = delete_args->getBalloon();
+
+    std::cout<<"Player name:"<<player.getName()<<std::endl;
+
+    if ( !player.BonusMode() ){
+        int lives_influence_value = balloon->getLivesInfluence();
+        player.UpdateLives( lives_influence_value );
+        player.IncreaseScore( balloon->getNormalPoints() );
+        if( balloon->BonusGiver() ) EnterBonusMode();
+
+    } else{
+        player.IncreaseScore( balloon -> getBonusPoints() );
+    }
+    std::cout<<"Score:"<<player.GetScore()<<std::endl;
 }
 Player::~Player()
 {
