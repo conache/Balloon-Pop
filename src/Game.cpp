@@ -19,12 +19,14 @@
 #include "GreenBalloon.h"
 #include "RedBalloon.h"
 #include "YellowBalloon.h"
+#include "ImageAtlas.h"
 Game::Game ()
 {
     _currentScene = new Scene ();
     CloneManager::Instance()->Add<GreenBalloon>("GreenBalloon");
     CloneManager::Instance()->Add<RedBalloon>("RedBalloon");
     CloneManager::Instance()->Add<YellowBalloon>("YellowBalloon");
+    ImageAtlas::Instance()->Add("RedBalloonDestroy","c:\\Users\\Cristian\\Desktop\\game graphics\\RedBalloon\\");
 }
 
 Game::~Game ()

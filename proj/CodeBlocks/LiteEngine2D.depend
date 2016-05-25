@@ -1472,7 +1472,7 @@
 	<SDL.h>
 	<stdint.h>
 
-1464080093 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
+1464192374 source:c:\users\cristian\desktop\liteengine2d-master\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
@@ -1486,6 +1486,7 @@
 	"GreenBalloon.h"
 	"RedBalloon.h"
 	"YellowBalloon.h"
+	"ImageAtlas.h"
 
 1463523354 c:\users\cristian\desktop\liteengine2d-master\include\game.h
 	"Scene.h"
@@ -1604,12 +1605,13 @@
 1464107884 c:\users\cristian\desktop\liteengine2d-master\include\redballoon.h
 	"Balloon.h"
 
-1464117927 source:c:\users\cristian\desktop\liteengine2d-master\src\redballoon.cpp
+1464192344 source:c:\users\cristian\desktop\liteengine2d-master\src\redballoon.cpp
 	"RedBalloon.h"
 	"Screen.h"
 
-1464117914 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
+1464120560 source:c:\users\cristian\desktop\liteengine2d-master\src\greenballoon.cpp
 	"GreenBalloon.h"
+	"Screen.h"
 
 1464107651 c:\users\cristian\desktop\liteengine2d-master\include\greenballoon.h
 	"Balloon.h"
@@ -1747,4 +1749,13 @@
 
 1464019995 source:c:\users\cristian\desktop\liteengine2d-master\src\eventhandlerbase.cpp
 	"EventHandlerBase.h"
+
+1464193843 source:c:\users\cristian\desktop\liteengine2d-master\src\imageatlas.cpp
+	"ImageAtlas.h"
+	"dirent.h"
+	"iostream"
+
+1464192731 c:\users\cristian\desktop\liteengine2d-master\include\imageatlas.h
+	<map>
+	<vector>
 
