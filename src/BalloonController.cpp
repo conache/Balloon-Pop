@@ -6,6 +6,7 @@
 #include "Input.h"
 #include "Player.h"
 #include "DeleteBalloonArgs.h"
+#include "DeleteAnimationArgs.h"
 #include "EventManager.h"
 
 BalloonController::BalloonController(BalloonFactory* balloonGenerator, Player* current_player){
@@ -18,9 +19,9 @@ BalloonController::BalloonController(BalloonFactory* balloonGenerator, Player* c
 }
 
 BalloonController::~BalloonController(){
-    for (auto it : _balloons) {
-		delete it;
-	}
+    for (auto it : _balloons)
+        delete it;
+
 }
 
 void BalloonController::deleteObject( Balloon* object){
@@ -39,6 +40,16 @@ void BalloonController::runDeleteEvent( Balloon* object){
     delete args;
 }
 
+
+void BalloonController::runDeleteAnimationEvent( Balloon* object){
+
+    EventManager::Instance()->AddEvent("BalloonDestroy", object, &Balloon::Animate);
+    DeleteAnimationArgs* args = new DeleteAnimationArgs;
+    EventManager::Instance()->RunEvent("BalloonDestroy",*args);
+    EventManager::Instance()->GetOutOfEvent( "BalloonDestroy",object,&Balloon::Animate);
+
+}
+
 void BalloonController::checkPosition(){
     for (auto it : _balloons){
         Vector2 object_position = it->get_position();
@@ -54,11 +65,10 @@ void BalloonController::onClick( Vector2 clickPosition ){
     for (auto it : _balloons) {
         Vector2 object_position = it->get_position();
         if( ( click_X >= object_position.GetX() && click_X <= object_position.GetX() + it->get_width() ) &&
-           ( click_Y <= object_position.GetY() && click_Y >= object_position.GetY() - it->get_height()) )
-        runDeleteEvent( it );
-
+           ( click_Y <= object_position.GetY() && click_Y >= object_position.GetY() - it->get_height()) ) runDeleteAnimationEvent( it );
 	}
 }
+
 void BalloonController::Draw(){
     for (auto it : _balloons){
         it->Draw();
@@ -82,7 +92,8 @@ void BalloonController::Update(){
     clickCheck();
     checkPosition();
     for (auto it : _balloons){
-        it->Update();
+        if( it->getDeletable() ) runDeleteEvent( it );
+        else it->Update();
     }
 
 }

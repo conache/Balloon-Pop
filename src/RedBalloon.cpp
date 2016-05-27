@@ -1,5 +1,7 @@
 #include "RedBalloon.h"
 #include "Screen.h"
+#include "ImageAtlas.h"
+#include "EventManager.h"
 int RedBalloon::lives_influence = -1;
 bool RedBalloon::bonus_giver = false;
 int RedBalloon::bonus_mode_points = 0;
@@ -8,6 +10,21 @@ RedBalloon::RedBalloon():Balloon("Assets/Images/red_balloon.png"){
 }
 RedBalloon::~RedBalloon(){
 }
+
+
+void RedBalloon::DeleteAnimation(EventArgs& args){
+    Balloon::UpdateSprites( ImageAtlas::Instance()->getStripes( "RedBalloonDestroy" ) );
+    Balloon::setDeleteAnimation( true );
+}
+
+void RedBalloon::Animate(EventArgs& args){
+
+    EventManager::Instance()->AddEvent( "RedBalloonDestroy",this,&DeleteAnimation );
+    EventManager::Instance()->RunEvent( "RedBalloonDestroy", args);
+    EventManager::Instance()->GetOutOfEvent( "RedBalloonDestroy",this,&DeleteAnimation);
+
+}
+
 
 short RedBalloon::getLivesInfluence(){
     if( _position.GetY() <= Screen::GetHeight() ) return lives_influence;

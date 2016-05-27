@@ -26,7 +26,9 @@ Game::Game ()
     CloneManager::Instance()->Add<GreenBalloon>("GreenBalloon");
     CloneManager::Instance()->Add<RedBalloon>("RedBalloon");
     CloneManager::Instance()->Add<YellowBalloon>("YellowBalloon");
-    ImageAtlas::Instance()->Add("RedBalloonDestroy","c:\\Users\\Cristian\\Desktop\\game graphics\\RedBalloon\\");
+    ImageAtlas::Instance()->Add("RedBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/RedBalloon/");
+    ImageAtlas::Instance()->Add("YellowBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/YellowBalloon/");
+    ImageAtlas::Instance()->Add("GreenBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/GreenBalloon/");
 }
 
 Game::~Game ()

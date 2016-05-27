@@ -55,6 +55,7 @@
 		<Unit filename="../../include/BalloonController.h" />
 		<Unit filename="../../include/BalloonFactory.h" />
 		<Unit filename="../../include/CloneManager.h" />
+		<Unit filename="../../include/DeleteAnimationArgs.h" />
 		<Unit filename="../../include/DeleteBalloonArgs.h" />
 		<Unit filename="../../include/EventArgs.h" />
 		<Unit filename="../../include/EventHandler.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="../../include/GameTime.h" />
 		<Unit filename="../../include/GreenBalloon.h" />
 		<Unit filename="../../include/Image.h" />
+		<Unit filename="../../include/ImageAtlas.h" />
 		<Unit filename="../../include/ImageLoader.h" />
 		<Unit filename="../../include/Input.h" />
 		<Unit filename="../../include/Object.h" />
@@ -89,6 +91,7 @@
 		<Unit filename="../../src/BalloonController.cpp" />
 		<Unit filename="../../src/BalloonFactory.cpp" />
 		<Unit filename="../../src/CloneManager.cpp" />
+		<Unit filename="../../src/DeleteAnimationArgs.cpp" />
 		<Unit filename="../../src/DeleteBalloonArgs.cpp" />
 		<Unit filename="../../src/EventArgs.cpp" />
 		<Unit filename="../../src/EventHandler.cpp" />
@@ -100,6 +103,7 @@
 		<Unit filename="../../src/GameTime.cpp" />
 		<Unit filename="../../src/GreenBalloon.cpp" />
 		<Unit filename="../../src/Image.cpp" />
+		<Unit filename="../../src/ImageAtlas.cpp" />
 		<Unit filename="../../src/ImageLoader.cpp" />
 		<Unit filename="../../src/Input.cpp" />
 		<Unit filename="../../src/Object.cpp" />

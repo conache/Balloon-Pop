@@ -26,6 +26,7 @@ class BalloonController: public SceneObject
         void clickCheck();
         void factoryInterrogation();
         void runDeleteEvent( Balloon* object);
+        void runDeleteAnimationEvent( Balloon* object);
 };
 
 

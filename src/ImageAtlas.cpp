@@ -17,7 +17,7 @@ void ImageAtlas::directoryPhotos( std::vector<std::string>& photos, char* path )
         current_file = readdir( directory );
         while ( current_file != NULL) {
             std::string file_name = (std::string)current_file->d_name;
-            if ( file_name.find(".png") != std::string::npos) photos.push_back( file_name );
+            if ( file_name.find(".png") != std::string::npos) photos.push_back( path+file_name );
             current_file = readdir( directory );
             }
         closedir (directory);

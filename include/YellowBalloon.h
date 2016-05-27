@@ -14,6 +14,8 @@ class YellowBalloon: public Balloon
         getNormalPoints();
         getBonusPoints();
         short getLivesInfluence();
+        void Animate(EventArgs& args);
+        void DeleteAnimation(EventArgs& args);
 };
 
 #endif // YELLOWBALLOON_H

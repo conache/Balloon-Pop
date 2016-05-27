@@ -3,12 +3,17 @@
 #include "Image.h"
 #include "SceneObject.h"
 #include "Vector2.h"
+#include <vector>
+#include "EventArgs.h"
 class Balloon : public SceneObject
 {
 private:
 	Image* _image;
 	Vector2 _destination;
 	static float _speed;
+    std::vector<Image*>sprite;
+    bool delete_animation;
+    bool deletable;
 protected:
     Vector2 _position;
 public:
@@ -18,12 +23,18 @@ public:
     virtual bool BonusGiver()=0;
     virtual int getNormalPoints()=0;
     virtual int getBonusPoints()=0;
+    virtual void Animate(EventArgs& args)=0;
+    virtual void DeleteAnimation( EventArgs& args)=0;
 	virtual int get_width();
 	virtual int get_height();
     virtual Vector2 get_position();
 	virtual void Draw ();
 	virtual void Update ();
+    bool getDeletable();
+    void setDeleteAnimation( bool attribute);
 	float GetSpeed();
+    void UpdateSprites( std::vector< std::string >newSprites);
+
 };
 
 #endif

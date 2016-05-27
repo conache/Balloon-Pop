@@ -15,6 +15,8 @@ class GreenBalloon: public Balloon
         int getNormalPoints();
         int getBonusPoints();
         short getLivesInfluence();
+        void Animate(EventArgs& args);
+        void DeleteAnimation( EventArgs& args);
     protected:
 };
 #endif // GREENBALLOON_H

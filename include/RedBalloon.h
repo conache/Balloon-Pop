@@ -1,7 +1,7 @@
 #ifndef REDBALLOON_H
 #define REDBALLOON_H
 #include "Balloon.h"
-
+#include "EventArgs.h"
 class RedBalloon: public Balloon
 {
     private:
@@ -16,6 +16,8 @@ class RedBalloon: public Balloon
         short getLivesInfluence();
         int getNormalPoints();
         int getBonusPoints();
+        void Animate(EventArgs& args);
+        void DeleteAnimation(EventArgs& args);
     protected:
 
 };

@@ -24,3 +24,5 @@ void EventManager::RunEvent(std::string EventName, EventArgs& args){
     }
     else return;
 }
+
+
