@@ -32,9 +32,7 @@ class EventManager
                     int i=0;
                     for( ; second_it != converted_vector.end(); ++second_it, i++){
                         if( (*second_it)->getExecutedFunction() == fp){
-                        std::cout<<"Hereeeeee\n"<<i<<" "<<EventMapper[ EventName ].size()<<std::endl;
                         EventMapper[ EventName ].erase(EventMapper[ EventName ].begin()+i);
-                        std::cout<<"Hereeeeee\n"<<i<<" "<<EventMapper[ EventName ].size()<<std::endl;
                         delete *second_it;
                     }
                 }
