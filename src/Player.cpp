@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "EventManager.h"
 #include "DeleteBalloonArgs.h"
+#include "GameOverArgs.h"
 #include <iostream> //remove it
 #include "time.h"
 #include "GameTime.h"
@@ -89,7 +90,6 @@ void Player::UpdateStatus(EventArgs& args){
     DeleteBalloonArgs* delete_args = dynamic_cast<DeleteBalloonArgs*>(&args);
     Player& player = *delete_args->getPlayer();
     Balloon* balloon = delete_args->getBalloon();
-
     std::cout<<"Player name:"<<player.getName()<<std::endl;
 
     if ( !player.BonusMode() ){
@@ -102,6 +102,10 @@ void Player::UpdateStatus(EventArgs& args){
         player.IncreaseScore( balloon -> getBonusPoints() );
     }
     std::cout<<"Score:"<<player.GetScore()<<std::endl;
+    if ( lives == 0){
+            GameOverArgs* args = new GameOverArgs;
+            EventManager::Instance()->RunEvent("GameOver",*args);
+    }
 }
 Player::~Player()
 {

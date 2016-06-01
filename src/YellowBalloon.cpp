@@ -9,11 +9,12 @@ int YellowBalloon::bonus_mode_points = 50;
 int YellowBalloon::normal_mode_points = 20;
 
 short  YellowBalloon::getLivesInfluence(){
-    if( _position.GetY() > Screen::GetHeight() ) return -1;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return -1;
     return lives_influence;
 }
 
 bool YellowBalloon::BonusGiver(){
+    if( !animation && _position.GetY() > Screen::GetHeight() ) return false;
     return bonus_giver;
 }
 
@@ -38,11 +39,11 @@ YellowBalloon::~YellowBalloon(){
 }
 
 int YellowBalloon::getNormalPoints(){
-    if( _position.GetY() > Screen::GetHeight() ) return 0;
+   if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return 0;
     return normal_mode_points;
 }
 
 int YellowBalloon::getBonusPoints(){
-    if( _position.GetY() > Screen::GetHeight() )  return 0;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 )  return 0;
         return bonus_mode_points;
 }

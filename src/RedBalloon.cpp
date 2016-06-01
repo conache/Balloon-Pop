@@ -27,20 +27,21 @@ void RedBalloon::Animate(EventArgs& args){
 
 
 short RedBalloon::getLivesInfluence(){
-    if( _position.GetY() <= Screen::GetHeight() ) return lives_influence;
+    if( _position.GetY() <= Screen::GetHeight()+get_height()-0.5 ) return lives_influence;
     return 0;
 }
 
 bool RedBalloon::BonusGiver(){
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return false;
     return bonus_giver;
 }
 
 int RedBalloon::getNormalPoints(){
-    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return 0;
     return normal_mode_points;
 }
 
 int RedBalloon::getBonusPoints(){
-    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return 0;
     return bonus_mode_points;
 }

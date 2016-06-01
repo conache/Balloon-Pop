@@ -8,13 +8,14 @@
 class Balloon : public SceneObject
 {
 private:
-	Image* _image;
 	Vector2 _destination;
 	static float _speed;
     std::vector<Image*>sprite;
-    bool delete_animation;
     bool deletable;
+    Image* _image;
 protected:
+
+     bool animation;
     Vector2 _position;
 public:
 	Balloon (std::string image_path);

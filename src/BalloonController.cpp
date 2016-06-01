@@ -40,7 +40,6 @@ void BalloonController::runDeleteEvent( Balloon* object){
     delete args;
 }
 
-
 void BalloonController::runDeleteAnimationEvent( Balloon* object){
 
     EventManager::Instance()->AddEvent("BalloonDestroy", object, &Balloon::Animate);

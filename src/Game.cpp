@@ -15,25 +15,17 @@
 #define TIME_PER_FRAME (1000 / FRAMES_PER_SECOND)
 #define TICKS_PER_FRAME (1.0 / FRAMES_PER_SECOND)
 #include <string>
-#include "CloneManager.h"
-#include "GreenBalloon.h"
-#include "RedBalloon.h"
-#include "YellowBalloon.h"
-#include "ImageAtlas.h"
-Game::Game ()
-{
+#include "EventManager.h"
+#include "EventArgs.h"
+
+Game::Game (){
     _currentScene = new Scene ();
-    CloneManager::Instance()->Add<GreenBalloon>("GreenBalloon");
-    CloneManager::Instance()->Add<RedBalloon>("RedBalloon");
-    CloneManager::Instance()->Add<YellowBalloon>("YellowBalloon");
-    ImageAtlas::Instance()->Add("RedBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/RedBalloon/");
-    ImageAtlas::Instance()->Add("YellowBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/YellowBalloon/");
-    ImageAtlas::Instance()->Add("GreenBalloonDestroy","c:/Users/Cristian/Desktop/game graphics/GreenBalloon/");
+    running = false;
+    EventManager::Instance()->AddEvent("GameOver", this, &Game::exitGame);
 }
 
 Game::~Game ()
 {
-
 }
 
 Game* Game::Instance (){
@@ -45,12 +37,12 @@ Game* Game::Instance (){
 
 void Game::Start ()
 {
-	bool running=true;
+    running=true;
 	while(running){
 		Screen::Clear ();
 		GameTime::UpdateFrame ();
 		Input::UpdateState ();
-        if (Input::GetQuit () || Input::GetKeyDown (27)) {
+        if (Input::GetQuit () || Input::GetKeyDown (27)){
         	running = false;
         	continue;
         }
@@ -61,4 +53,8 @@ void Game::Start ()
 			SDL_Delay(TICKS_PER_FRAME - (GameTime::GetElapsedTimeMS () - GameTime::GetTimeMS ()));
 		}
 	}
+}
+
+void Game::exitGame(EventArgs& args){
+    running = false;
 }

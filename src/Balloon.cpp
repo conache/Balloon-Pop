@@ -10,7 +10,7 @@
 float Balloon::_speed = 60;
 Balloon::Balloon(std::string image_path)
 {
-    delete_animation = false;
+    animation = false;
     deletable = false;
 	_image = Resources::LoadImage ( image_path );
 	sprite.push_back( _image );
@@ -39,30 +39,28 @@ int Balloon::get_height(){
 void Balloon::Draw ()
 {
 	Screen::Draw ( sprite.front() , _position);
-
 }
 
 void Balloon::Update (){
 
-
-	Vector2 velocity = _destination - _position;
-	if (velocity.SqrMagnitude () < 0.1f) {
-        return;
-	} else{
-	velocity.Normalize ();
-	_position += velocity * _speed * GameTime::GetDeltaTime ();
-	}
-/*
-      if( delete_animation ) {
-            _position.SetX( _position.GetX() - 10);
-            _position.SetY( _position.GetY() + 5);
+    Vector2 velocity;
+    if( !animation ){
+        velocity = _destination - _position;
+        if ( velocity.SqrMagnitude () < 0.1f) {
+            return;
+        } else if (!animation){
+            velocity.Normalize ();
+            _position += velocity * _speed * GameTime::GetDeltaTime ();
+        }
     }
-*/
-	if ( sprite.size() > 1 ) sprite.erase( sprite.begin() );
-    else if( delete_animation && sprite.size() == 1 ){
+
+	if ( sprite.size() > 1 ) {
+            sprite.erase( sprite.begin() );
+    }else if( animation && sprite.size() == 1 ){
+            _position.SetY( _position.GetY() - 35);
             sprite.erase( sprite.begin());
             deletable = true;
-            delete_animation = false;
+            animation = false;
     }
 
 }
@@ -75,7 +73,7 @@ void Balloon::UpdateSprites(std::vector<std::string> newSprites){
     for(int i=0; i< newSprites.size(); i++) {
             sprite.push_back( Resources::LoadImage ( (std::string)newSprites[i]) );
     }
-  //  for(int i=0; i<sprite.size(); i++) std::cout<<sprite[i]<<std::endl;
+
 }
 
 bool Balloon::getDeletable(){
@@ -83,5 +81,7 @@ bool Balloon::getDeletable(){
 }
 
 void Balloon::setDeleteAnimation( bool attribute ){
-    delete_animation = attribute;
+    animation = attribute;
+    _position.SetX(_position.GetX() - 50);
+    _position.SetY( _position.GetY() + 35);
 }

@@ -31,18 +31,20 @@ short GreenBalloon::getLivesInfluence(){
 }
 
 bool GreenBalloon::BonusGiver(){
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return false;
     return bonus_giver;
 }
+
 GreenBalloon::~GreenBalloon(){
 }
 
 int GreenBalloon::getNormalPoints(){
-    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return 0;
     return normal_mode_points;
 }
 
 int GreenBalloon::getBonusPoints(){
-    if( _position.GetY() > Screen::GetHeight() ) return 0;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5 ) return 0;
     return bonus_mode_points;
 }
 
