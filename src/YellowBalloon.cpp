@@ -14,7 +14,7 @@ short  YellowBalloon::getLivesInfluence(){
 }
 
 bool YellowBalloon::BonusGiver(){
-    if( !animation && _position.GetY() > Screen::GetHeight() ) return false;
+    if( _position.GetY() > Screen::GetHeight()+get_height()-0.5  ) return false;
     return bonus_giver;
 }
 

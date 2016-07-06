@@ -13,9 +13,8 @@ private:
     std::vector<Image*>sprite;
     bool deletable;
     Image* _image;
+    bool animation;
 protected:
-
-     bool animation;
     Vector2 _position;
 public:
 	Balloon (std::string image_path);
